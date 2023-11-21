@@ -1,0 +1,81 @@
+/* color palette from <https://github.com/vuejs/theme> */
+@import './variables.scss';
+
+@font-face {
+  font-family: 'Akira Expanded Demo';
+  src: url('@/assets/Akira_Expanded_Demo.otf') format('woff2'),
+       url('@/assets/Akira_Expanded_Demo.otf') format('woff');
+}
+
+*,
+*::before,
+*::after {
+  font-family: 'Akira Expanded Demo' ;
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: 200;
+  color: white;
+  font-size: 18px;
+}
+
+body {
+  background-color: black;
+  height: 100vh;
+}
+
+#app {
+  background: url('../assets/stars.gif') fixed;
+  height: 100%;
+}
+
+button {
+  width: min-content;
+  font-family: 'helvetica';
+  padding: 15px;
+  width: 200px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+
+.answer-button {
+  background-color: $primary;
+}
+
+.submit-button {
+  background-color: $secondary;
+  &:disabled {
+    background-color: rgba($color: $secondary, $alpha: 0.5);
+  }
+}
+
+
+.easy {
+  background-color: $secondary;
+}
+
+.medium {
+  background-color: $tertiary;
+}
+
+.hard {
+  background-color: $red;
+}
+
+input, input:focus {
+  font-family: 'helvetica';
+  outline: $primary;
+  width: 100%;
+  outline: none;
+  color: black;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.adjust-player-button {
+  background-color: $primary;
+  color: white;
+}
