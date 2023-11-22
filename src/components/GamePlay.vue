@@ -30,12 +30,14 @@
   <template v-if="responseStatus === 'correct'">
     <div>
       <h2>Good answer</h2>
+      <p class="steps">{{`Step ${selectedQuestion.difficulty} ${selectedQuestion.difficulty == 1 ? 'case' : 'cases'} forward`}}</p>
     </div >
   </template>
   <template v-if="responseStatus === 'incorrect'">
     <div>
       <h2>Wrong answer</h2>
       <p class="helvetica">{{ `the answer was : ${getCorrectAnswer()}`}}</p>
+      <p class="steps">{{`Step ${selectedQuestion.difficulty} ${selectedQuestion.difficulty == 1 ? 'case' : 'cases'} backward`}}</p>
     </div>
   </template>
   <button v-if="responseStatus" class="submit-button" @click="getToNextPlayer()">Next player</button>
@@ -189,6 +191,12 @@ function answerQuestion(answer) {
 
   .helvetica {
     font-family: 'Helvetica';
+    padding-top: 20px;
+  }
+
+  .steps {
+    font-size: 20px;
+    font-weight: bold;
     padding-top: 20px;
   }
 </style>
